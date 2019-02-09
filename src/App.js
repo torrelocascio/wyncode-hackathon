@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Scene from './components/Scene.js';
+import {Scene, ROAD} from './components/Scene.js';
 import ControlPanel from './components/ControlPanel';
 class App extends Component {
   componentDidMount(){
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
       <Scene />
-        <ControlPanel />
+        <ControlPanel road={ROAD} />
       </div>
     );
   }

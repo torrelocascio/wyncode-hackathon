@@ -26,7 +26,9 @@ export function createScene () {
   this.camera.lookAt(0,0,0);
   this.controls.update();
   this.scene = new THREE.Scene();
-  this.scene.background = new THREE.Color(0x000000);
+  // this.scene.background = new THREE.Color(0xed7800);
+  this.scene.background = new THREE.Color(0x8b542f);
+  // #8b542f
 
   // roll over helpers
   // this.rollOverGeo = new THREE.BoxBufferGeometry(50,50,50);
@@ -34,15 +36,16 @@ export function createScene () {
   // this.rollOverMesh = new THREE.Mesh(this.rollOverGeo, this.rollOverMaterial);
   // this.scene.add(this.rollOverMesh);
 
-  let loader = new THREE.TextureLoader();
-  // cubes
-  loader.load(cubeMatMap, function(myTexture){
-    this.cubeGeo = new THREE.BoxBufferGeometry(50, 50, 50);
-    this.cubeMaterial = new THREE.MeshLambertMaterial({color: 0xf3b74c, map: myTexture});
-  }.call(this));
+  // let loader = new THREE.TextureLoader();
+  // // cubes
+  // loader.load(cubeMatMap, function(myTexture){
+  //   this.cubeGeo = new THREE.BoxBufferGeometry(50, 50, 50);
+  //   this.cubeMaterial = new THREE.MeshLambertMaterial({color: 0xf3b74c, map: myTexture});
+  // }.call(this));
 
   this.createPlayer();
-  this.makeCars()
+  this.makeCars();
+  this.makeWhoppers();
 
   //grid
   this.gridHelper = new THREE.GridHelper(1000, 20);

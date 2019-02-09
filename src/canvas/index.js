@@ -8,7 +8,7 @@ import {
 } from './playerControls';
 import {animateScene, updateScene} from './animate'
 import {createPlayer} from './player';
-import {makeCars, animateCars} from './car'
+import {makeCars, animateCars, makeWhoppers} from './car'
 
 export class Road {
   constructor(window, document, mount){
@@ -49,6 +49,7 @@ export class Road {
     this.updateScene = this.updateScene.bind(this);
     this.createPlayer = this.createPlayer.bind(this);
     this.makeCars = this.makeCars.bind(this);
+    this.makeWhoppers = this.makeWhoppers.bind(this);
     this.animateCars = this.animateCars.bind(this);
     this.setKeyboard = this.setKeyboard.bind(this)
     this.onWindowResize = this.onWindowResize.bind(this);
@@ -64,6 +65,7 @@ export class Road {
 }
 Road.prototype.makeCars = makeCars;
 Road.prototype.animateCars = animateCars;
+Road.prototype.makeWhoppers = makeWhoppers;
 Road.prototype.createPlayer = createPlayer;
 Road.prototype.createScene = makeScene;
 Road.prototype.onWindowResize = onWindowResize;

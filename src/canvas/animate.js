@@ -21,8 +21,10 @@ export function updateScene() {
 	if ( this.keyboard.pressed("down") )
 		this.player.position.z += moveDistance;
 
+  let  i = 0
   for (let car of this.collidableMeshList){
-    this.animateCars(car, delta);
+    this.animateCars(car, delta, i);
+    i++;
   }
 
 	// collision detection:
