@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './components/Header';
+import Burger from './components/Burger';
+import Runway from './components/Runway';
 import './App.css';
 
 class App extends Component {
+  state = {
+    score: 0
+  }
+
+  updateScore = (points) => {
+    this.setState({ score: this.state.score + points});
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header score={this.state.score} />
+        <Runway />
+        <Burger addPoints={this.updateScore} />
       </div>
     );
   }
