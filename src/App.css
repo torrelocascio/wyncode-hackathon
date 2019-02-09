@@ -1,3 +1,13 @@
+body {
+  /* background-color: black; */
+}
+.burger {
+    width: 200px;
+}
+.bag {
+  width: 200px;
+}
+
 .App {
   text-align: center;
 }
