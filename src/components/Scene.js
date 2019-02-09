@@ -37,7 +37,7 @@ class Scene extends Component {
     return (
       <div>
         <div style={{position: 'absolute'}}>
-          <h1 style={{background: '#000000', color:'#ffffff'}}>Hello RBI</h1>
+          <h1 style={{background: '#000000', color:'#ffffff'}}>Whopper Frogger!</h1>
         </div>
         <div style={{background:'#000000'}} id="Scene" ref={(mount)=>{
           this.mount=mount;

@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 
 export function updateScene() {
+  if (this.shouldAnimate) {
 	var delta = this.clock.getDelta(); // seconds.
 	var moveDistance = 200 * delta; // 200 pixels per second
 	var rotateAngle = Math.PI / 2 * delta;   // pi/2 radians (90 degrees) per second
@@ -32,9 +33,10 @@ export function updateScene() {
 	//   HOWEVER: when the origin of the ray is within the target mesh, collisions do not occur
 	var originPoint = this.player.position.clone();
 
-	// clearText();
+	// // clearText();
 
-	for (var vertexIndex = 0; vertexIndex < this.player.geometry.vertices.length; vertexIndex++)
+    let keepPlaying = this.shouldAnimate;
+	for (var vertexIndex = 0; (vertexIndex < this.player.geometry.vertices.length && keepPlaying); vertexIndex++)
 	{
 		var localVertex = this.player.geometry.vertices[vertexIndex].clone();
 		var globalVertex = localVertex.applyMatrix4( this.player.matrix );
@@ -43,12 +45,19 @@ export function updateScene() {
 		var ray = new THREE.Raycaster( originPoint, directionVector.clone().normalize() );
     var collisionResults = ray.intersectObjects( this.collidableMeshList );
     // console.log(ray, collisionResults);
-		if ( collisionResults.length > 0 && collisionResults[0].distance < directionVector.length() )
+    if (keepPlaying){
+		if ( collisionResults.length > 0 && collisionResults[0].distance < directionVector.length() ){
       // appendText(" Hit ");
-      console.log("Hit");
+      this.shouldAnimate = false
+    }
 	}
 
     this.controls.update();
+}
+  // delete this.player;
+} else {
+  this.messages.push('Try again!');
+}
 }
 
 export function animateScene () {
@@ -63,5 +72,7 @@ export function animateScene () {
       // line.material.color.setHSL(Math.random(), 1, 0.5);
     // }
     this.renderer.render(this.scene, this.camera);
+    if (this.shouldAnimate) {
     this.updateScene();
+    }
 }

@@ -42,6 +42,7 @@ export class Road {
     this.collidableMeshList = [];
     this.arrowList = [];
     this.directionList = [];
+    this.shouldAnimate=true;
 
     this.createScene = this.createScene.bind(this);
     this.animateScene = this.animateScene.bind(this);

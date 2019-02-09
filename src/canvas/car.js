@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 
+const negRange = [...Array.new(500).keys()].map((num)=>num*-1);
+const gridRange = [...Array.new(500)].slice(1,499).concat(negRange);
+
 export function makeCars() {
   for(let i=0; i<10; i++){
     let cubeGeometry = new THREE.CubeGeometry(50,25,50,1,1,1);
