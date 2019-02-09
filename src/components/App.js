@@ -19,7 +19,6 @@ export default class App extends Component {
 
   spinTheWheel() {
     let randomIndex = Math.floor(Math.random() * prizes.length);
-    //Spin the wheel
     this.addPrize(this.prizes[randomIndex]);
     this.setState({spins: this.state.spins-1})
   }
