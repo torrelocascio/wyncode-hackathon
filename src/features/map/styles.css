@@ -1,0 +1,24 @@
+.tile {
+  display: inline-flex;
+}
+
+.tileZero {
+  background-color: #F6DC2C
+}
+
+.tileOne {
+  background-color: #F5AA23
+}
+
+.prize {
+  background-image: url('/tiles/whopper.jpg');
+  background-color: #F6DC2C
+}
+
+.water {
+  background-color: blue;
+}
+
+.marble {
+  background-image: url('/tiles/rsz_marble.jpg')
+}
