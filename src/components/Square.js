@@ -4,6 +4,7 @@ import $ from 'jquery'
 
 function Square() { 
   
+  
 
   return (     
     
@@ -12,9 +13,7 @@ function Square() {
       function () {
         $(".timbit-pic").toggle();
 
-      }
-    }
-   > 
+      }}> 
       < div className = 'img-div'>
         < img className = 'timbit-pic'
         src = {
@@ -24,7 +23,7 @@ function Square() {
         />
       </div>
       
-     </button>
+    </button>
   );
 }
 

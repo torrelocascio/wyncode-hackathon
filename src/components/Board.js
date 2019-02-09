@@ -10,24 +10,18 @@ class Board extends React.Component {
       //  ???
      };
    }
-
-   
+     
 
   renderSquare(i) {
     return (
-      < Square />
+      < Square 
+      />
     );
-  }
+  }   
 
-  
-  
-
-  render() {
-   
-
-   
+  render() {   
     return (
-      <div>
+      <div className='board'>
         < div className = "board-row">
         
           {this.renderSquare(0)}

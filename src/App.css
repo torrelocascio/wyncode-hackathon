@@ -1,16 +1,12 @@
 .App {
   text-align: center;
-  background-color: seashell;
+  background-color: white;
 }
 
 .square{
   width: 10rem;
   height: 10rem;
   background-color: #5E1214;
-}
-
-.world-comp{
-  margin-top: 10rem;
 }
 
 .timbit-pic{
@@ -21,5 +17,29 @@
 .title{
   font-weight: bold;
   font-size: 3rem;
-  margin: 3rem 0;
+  margin: 1rem 0;
+  color: #5E1214;
 }
+
+.logo{
+  width:10rem;
+  height: 10rem;
+}
+.board{
+  margin-bottom: 1rem;
+}
+
+#redfoot{
+  background-color: #5E1214 !important;
+}
+
+#redfoot span{
+  color: white;
+  font-size: 2rem;
+}
+.bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
