@@ -10,7 +10,7 @@ export default function Win(props) {
 
   return (
     <animated.div style={anim1}>
-      <div style={c1Style}>
+      <div className={"line"}>
         <h2>
           YOU WIN. CONGRATULATIONS. GO TO YOUR NEAREST BURGER KING LOCATION AND
           TELL THEM YOU EARNED A FREE WHOPPER. I HAVE NO VOUCHERS TO PROVIDE,
@@ -21,11 +21,3 @@ export default function Win(props) {
     </animated.div>
   );
 }
-
-const c1Style = {
-  // background: "steelblue",
-  // color: "red",
-  color: "gold",
-  padding: "1.5rem",
-  textAlign: "center"
-};

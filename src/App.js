@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Component1 from "./components/Component1";
-import Component2 from "./components/Component2";
+import Food from "./components/Food";
 import Line1 from "./components/Line1";
 import Line2 from "./components/Line2";
 import Line3 from "./components/Line3";
@@ -55,41 +54,49 @@ class App extends Component {
       case null:
         return (
           <div className="game">
-            <Component1 />
+            <Food />
             <Line1 q1={this.q1} lose={this.lose} />
-            <Component2 />
+            <Food />
           </div>
         );
       case 2:
         return (
           <div className="game">
-            <Component1 />
+            <Food />
             <Line2 q2={this.q2} lose={this.lose} />
-            <Component2 />
+            <Food />
           </div>
         );
       case 3:
         return (
           <div className="game">
-            <Component1 />
+            <Food />
             <Line3 q3={this.q3} lose={this.lose} />
-            <Component2 />
+            <Food />
           </div>
         );
       case "WIN":
         return (
           <div className="game">
-            <Component1 />
+            <Food />
             <Win tryAgain={this.tryAgain} />
-            <Component2 />
+            <Food />
           </div>
         );
       case "LOSE":
         return (
           <div className="game">
-            <Component1 />
+            <Food />
             <Lose tryAgain={this.tryAgain} />
-            <Component2 />
+            <Food />
+          </div>
+        );
+      default:
+        return (
+          <div className="game">
+            <Food />
+            <Line1 q1={this.q1} lose={this.lose} />
+            <Food />
           </div>
         );
     }
