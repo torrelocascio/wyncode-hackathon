@@ -4,11 +4,16 @@ import burger from '../burger.png';
 
 
 class Bag extends Component {
+
+//     handleClick(i) {
+//      alert(i)
+//     this.querySelector("burger").classList.add('up');
+//   }
   render() {
     return (
-       <div class='bk-bag'>
-        <img src={burger} className='burger' onclick='bonk(this)' />
-        <img src={bag} className='bag' />
+       <div className='bk-bag'>
+        <img src={burger} className={this.props.move} />
+        <img src={bag} className='bag' onClick={this.props.onClick} />
        </div>
     );
   }

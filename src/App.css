@@ -1,11 +1,45 @@
-body {
-  /* background-color: black; */
+/* body {
+  background-color: black;
+} */
+.game{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.burger {
-    width: 200px;
+.bk-bag{
+  height: 250px;
+  width: 30%;
+  position: relative;
+  overflow: hidden;
 }
 .bag {
-  width: 200px;
+  width: 150px;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0px;
+  margin: 0 auto;
+}
+.burger {
+  width: 150px;
+  z-index: 0;
+  position: absolute;
+  bottom: 10px;
+  transition:all 0.4s;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+.up{
+  width: 150px;
+  z-index: 0;
+  position: absolute;
+  transition:all 0.4s;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  bottom: 110px;
 }
 
 .App {
