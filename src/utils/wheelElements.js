@@ -1,0 +1,1 @@
+export default [{name: 'Fries', value: 20, color: 'red'}, {name: 'Chicken', value: 20, color: 'yellow'}, {name: 'Coke', value: 20, color: 'blue'}, {name: 'Nothing', value: 20, color: 'black'}, {name: 'Bok Choi', value: 20, color: 'green'}];

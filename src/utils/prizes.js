@@ -1,0 +1,1 @@
+export default [{name: "Fries", description: "Some fries"}, {name: "Chicken", description: "some chicken"}, {name: "coke", description: "some coke"}, {name: "nothing", description: "no prize for you :("}, {name: "bok choi", description: "Some bok choi"}];
