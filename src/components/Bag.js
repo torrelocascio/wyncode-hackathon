@@ -5,18 +5,6 @@ import logo from '../logo.png';
 import fries from '../fries.jpg';
 
 
-// class Bag extends Component {
-
-//   render() {
-//     return (
-//        <div className='bk-bag'>
-//         <img src={burger} className={this.props.move} />
-//         <img src={bag} className='bag' onClick={this.props.onClick} />
-//        </div>
-//     );
-//   }
-// }
-
 function Bag(props) {
     let imgg;
     switch(props.move){

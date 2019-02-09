@@ -52,7 +52,6 @@ class Game extends Component {
                 score = "You Lose!"
             }
             this.setState({score: score});
-
         }
      }
 
