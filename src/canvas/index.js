@@ -4,41 +4,11 @@
 import {createScene as makeScene} from './scene';
 import {
   onWindowResize, onDocumentKeyUp, onDocumentKeyDown,
-  onDocumentMouseDown, onDocumentMouseMove
-} from './controls';
-import {animateScene} from './animate'
-
-// let scene, renderer, camera;
-// let rollOverMaterial;
-// let rollOverMesh, rollOverGeo;
-
-// let cubeGeo
-// let cubeMaterial
-
-// let raycaster;
-// let mouse;
-// let plane;
-
-// let objects;
-
-
-
-// // let updateLinePositions;
-// // let gRenderScene;
-// export default {
-//   scene,
-//   renderer,
-//   camera,
-//   rollOverGeo,
-//   rollOverMaterial,
-//   rollOverMesh,
-//   cubeGeo,
-//   cubeMaterial,
-//   raycaster,
-//   mouse,
-//   plane,
-//   objects
-// }
+  onDocumentMouseDown, onDocumentMouseMove, setKeyboard
+} from './playerControls';
+import {animateScene, updateScene} from './animate'
+import {createPlayer} from './player';
+import {makeCars, animateCars} from './car'
 
 export class Road {
   constructor(window, document, mount){
@@ -46,6 +16,7 @@ export class Road {
     this.mount = mount;
     this.document = document;
 
+    this.clock = undefined;
     this.renderer = undefined;
     this.camera = undefined;
 
@@ -61,33 +32,49 @@ export class Road {
     this.plane = undefined;
 
     this.mouse = undefined;
+    this.keyboard = undefined;
     this.plane = undefined;
 
+    this.MovingBox = undefined;
     this.objects = [];
 
+    // collisions
+    this.collidableMeshList = [];
+    this.arrowList = [];
+    this.directionList = [];
+
     this.createScene = this.createScene.bind(this);
+    this.animateScene = this.animateScene.bind(this);
+    this.updateScene = this.updateScene.bind(this);
+    this.createPlayer = this.createPlayer.bind(this);
+    this.makeCars = this.makeCars.bind(this);
+    this.animateCars = this.animateCars.bind(this);
+    this.setKeyboard = this.setKeyboard.bind(this)
     this.onWindowResize = this.onWindowResize.bind(this);
-    this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
-    this.onDocumentKeyUp = this.onDocumentKeyUp.bind(this);
-    this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
-    this.onDocumentMouseDown = this.onDocumentMouseDown.bind(this);
-    // this.scene = this.createScene(window, document, mount);
+    // this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
+    // this.onDocumentKeyUp = this.onDocumentKeyUp.bind(this);
+    // this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
+    // this.onDocumentMouseDown = this.onDocumentMouseDown.bind(this);
 
   }
-
-  // createScene) => makeScene;
 
 
 
 }
+Road.prototype.makeCars = makeCars;
+Road.prototype.animateCars = animateCars;
+Road.prototype.createPlayer = createPlayer;
+Road.prototype.createScene = makeScene;
+Road.prototype.onWindowResize = onWindowResize;
+Road.prototype.setKeyboard = setKeyboard;
+Road.prototype.animateScene = animateScene;
+Road.prototype.updateScene = updateScene;
 
-  Road.prototype.createScene = makeScene;
-  Road.prototype.onWindowResize = onWindowResize;
-  Road.prototype.onDocumentKeyUp = onDocumentKeyUp;
-  Road.prototype.onDocumentKeyDown = onDocumentKeyDown;
-  Road.prototype.onDocumentMouseMove = onDocumentMouseMove;
-  Road.prototype.onDocumentMouseDown = onDocumentMouseDown;
+  // Road.prototype.onDocumentKeyUp = onDocumentKeyUp;
+  // Road.prototype.onDocumentKeyDown = onDocumentKeyDown;
+  // Road.prototype.onDocumentMouseMove = onDocumentMouseMove;
+  // Road.prototype.onDocumentMouseDown = onDocumentMouseDown;
 
-  Road.prototype.animateScene = animateScene;
+
 // let updateLinePositions;
 // let gRenderScene;

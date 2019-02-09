@@ -2312,6 +2312,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-0.5.2.tgz#f270326709a115a126cfed5623852439b8e4a3b5"
+  integrity sha1-8nAyZwmhFaEmz+1WI4UkObjko7U=
+
 commander@2.17.x, commander@~2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
@@ -8865,6 +8870,13 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
+stats@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stats/-/stats-1.0.0.tgz#4a3f63d81bd52cdecee313dacf1572aff57b7d29"
+  integrity sha1-Sj9j2BvVLN7O4xPazxVyr/V7fSk=
+  dependencies:
+    commander "0.5.2"
+
 "statuses@>= 1.4.0 < 2":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
@@ -9155,6 +9167,11 @@ three@^0.100.0:
   version "0.100.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.100.0.tgz#262841c0b7d88ebd62af73f28d9f578963b3aa00"
   integrity sha512-/lN2rdE1OqIwJr4/HcSaOisiCY0uVA0sqPpbCG5nil2uICEdS0LfGwSVYTtZDsIpR76r3++h5H3Hzg5D+SJBRQ==
+
+threex@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/threex/-/threex-1.0.0.tgz#c85057d519bf201410ba64418ce488a78cf60eca"
+  integrity sha1-yFBX1Rm/IBQQumRBjOSIp4z2Dso=
 
 throat@^4.0.0:
   version "4.1.0"

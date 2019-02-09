@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
 // import ControlPanel from './ControlPanel';
 import cubeMatMap from '../textures/square-outline-textured.png';
+// import {Stats} from 'stats';
 // import {onDocumentKeyDown, onDocumentKeyUp, onDocumentMouseDown, onDocumentMouseMove, onWindowResize } from './controls'
 // import Road from '.';
 
@@ -12,23 +13,26 @@ import cubeMatMap from '../textures/square-outline-textured.png';
 // let plane;
 // let objects;
 
+
 export function createScene () {
   // this.window = window;
   // this.document = document;
   // this.mount = mount;
+  // this.stats = new Stats();
+  this.clock = new THREE.Clock();
   this.camera = new THREE.PerspectiveCamera( 45, this.window.innerWidth / this.window.innerHeight, 1, 10000);
   this.controls =  new OrbitControls(this.camera);
-  this.camera.position.set(500, 800, 1300);
+  this.camera.position.set(0, 900, 1300);
   this.camera.lookAt(0,0,0);
   this.controls.update();
   this.scene = new THREE.Scene();
   this.scene.background = new THREE.Color(0x000000);
 
   // roll over helpers
-  this.rollOverGeo = new THREE.BoxBufferGeometry(50,50,50);
-  this.rollOverMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, opacity: 0.5, transparent: true})
-  this.rollOverMesh = new THREE.Mesh(this.rollOverGeo, this.rollOverMaterial);
-  this.scene.add(this.rollOverMesh);
+  // this.rollOverGeo = new THREE.BoxBufferGeometry(50,50,50);
+  // this.rollOverMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, opacity: 0.5, transparent: true})
+  // this.rollOverMesh = new THREE.Mesh(this.rollOverGeo, this.rollOverMaterial);
+  // this.scene.add(this.rollOverMesh);
 
   let loader = new THREE.TextureLoader();
   // cubes
@@ -36,6 +40,9 @@ export function createScene () {
     this.cubeGeo = new THREE.BoxBufferGeometry(50, 50, 50);
     this.cubeMaterial = new THREE.MeshLambertMaterial({color: 0xf3b74c, map: myTexture});
   }.call(this));
+
+  this.createPlayer();
+  this.makeCars()
 
   //grid
   this.gridHelper = new THREE.GridHelper(1000, 20);
@@ -48,7 +55,6 @@ export function createScene () {
 
   this.geometry = new THREE.PlaneBufferGeometry(1000,1000);
   this.geometry.rotateX(- Math.PI / 2);
-
   this.plane = new THREE.Mesh(this.geometry, new THREE.MeshBasicMaterial({visible: false}));
   this.scene.add(this.plane)
 
@@ -66,7 +72,8 @@ export function createScene () {
 
   this.mount.appendChild(this.renderer.domElement);
 
-  this.document.addEventListener( 'mousemove', this.onDocumentMouseMove, false );
+  this.setKeyboard();
+  // this.document.addEventListener( 'mousemove', this.onDocumentMouseMove, false );
   this.document.addEventListener( 'mousedown', this.onDocumentMouseDown, false );
   // document.addEventListener( 'keydown', onDocumentKeyDown, false );
   // document.addEventListener( 'keyup', onDocumentKeyUp, false );

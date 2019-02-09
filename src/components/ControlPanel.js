@@ -13,11 +13,24 @@ const panelStyle =  {
 export default class ControlPanel extends Component {
   constructor(){
     super();
-    this.state = {};
+    this.state = {
+      totalCars: null
+    };
   }
+  // componentDidMount(){
+  //   if (this.props.road){
+  //   this.setState({totalCars: this.props.road.collidableMeshList.length})
+  //   }
+  // }
+  // componentDidUpdate(){
+
+  //   this.setState({totalCars: this.props.road.collidableMeshList.length})
+  // }
   render(){
     return(
-      <div style={panelStyle}>Some buttons</div>
+      <div style={panelStyle}>
+        Welcome to Whopper Frogger
+      </div>
     )
   }
 }

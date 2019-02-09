@@ -1,7 +1,13 @@
 import * as THREE from 'three';
 // import {mouse, raycaster, scene, camera, rollOverMesh, renderer, objects} = from
 // import {cubeGeo, cubeMaterial}
+import {THREEx} from './threex'
 
+
+
+export function setKeyboard(){
+  this.keyboard = new THREEx.KeyboardState(this.document);
+}
 
 export function onDocumentKeyUp(){}
 
