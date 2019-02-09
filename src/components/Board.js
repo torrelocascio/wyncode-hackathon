@@ -1,27 +1,35 @@
 import React from 'react'
 import Square from './Square'
-import jQuery from 'jquery';
+// import $ from 'jquery'
 
 class Board extends React.Component {
+
+   constructor(props) {
+     super(props);
+     this.state = {
+      //  ???
+     };
+   }
+
+   
+
   renderSquare(i) {
     return (
-      <Square
-        value={i}
-        // onClick={() => this.props.onClick(i)}
-      />
+      < Square />
     );
   }
 
-  renderDonut(i){
-    const randomDonut = Math.floor(Math.random() * 9);
-    jQuery('.item').hide().eq(randomDonut).show();
-
-  }
+  
+  
 
   render() {
+   
+
+   
     return (
       <div>
-        <div className="board-row">
+        < div className = "board-row">
+        
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
