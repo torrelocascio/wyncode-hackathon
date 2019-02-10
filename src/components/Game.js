@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Bag from './Bag';
+import Score from './Score';
 import '../App.css';
 
 class Game extends Component {
@@ -18,12 +19,23 @@ class Game extends Component {
         this.state = {
           bags: arr,
           match: Array(2).fill(null),
-          score: "Find the Match!"
+          score: "Find the Matchhh!"
         };
-
        
     }
-   
+    startOver(){
+        let arr = ['burger','logo','burger','logo','fries','fries']
+        var currentIndex = arr.length;
+        var temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = arr[currentIndex];
+            arr[currentIndex] = arr[randomIndex];
+            arr[randomIndex] = temporaryValue;
+        }
+        this.setState({bags: arr, match:  Array(2).fill(null), score: "Find the Match!"});
+     }
     renderBag(i) {
         return (
           <Bag
@@ -58,9 +70,8 @@ class Game extends Component {
   render() {
     return (
       <div>
-      <div clasName="score">
-        <h1>{this.state.score}</h1>
-      </div>
+      <Score score={this.state.score} 
+             onClick={() => this.startOver()}/>
       <div className="game">
         {this.renderBag(0)}
         {this.renderBag(1)}
@@ -75,3 +86,4 @@ class Game extends Component {
 }
 
 export default Game;
+
