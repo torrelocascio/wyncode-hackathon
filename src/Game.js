@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Score from './Score';
-import Playfield from './Playfield';
-import generateRandom from './utils/Utils.js';
+import Score from './components/Score';
+import Playfield from './components/Playfield';
+import generateRandom from './components/utils/Utils.js';
 
 class Game extends Component {
   constructor(){
