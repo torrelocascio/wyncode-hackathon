@@ -11,14 +11,19 @@ class Timbit extends Component {
     }
 
   biteOrNot = () => {
+    let bitten = this.state.notBitten
+    if(bitten){
       this.setState( () => ({notBitten: false}))
       this.props.scored()
       this.props.rand()
+    }
   }  
 
   render(){
     let {notBitten} = this.state
-    return notBitten ? <img onClick={this.biteOrNot} alt="timbit" className='pure' src={tim} /> : <img alt="timbit-bitten" className='pure bitten' src={bite} />
+    let newClass = !notBitten ? "pure bitten" : 'pure'
+    let newImage = notBitten ? tim : bite
+    return <img onClick={this.biteOrNot} alt="timbit" className={newClass} src={newImage} />
   }
 }
 

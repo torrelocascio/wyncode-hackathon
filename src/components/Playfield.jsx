@@ -6,15 +6,14 @@ import Coffee from './Coffee';
 class Playfield extends Component {
 
   placeTimbit = (x,y, randOuter, randInner) => {
-    if(x === randOuter && y === randInner){
-      return <section key={`${y}item`}>
-               <Timbit rand={this.props.random} scored={this.props.scored} />
-               <Coffee />
-             </section>
-    } else 
-        return <section key={`${y}item`}>
-                 <Coffee />
-               </section>
+    let rando = (x === randOuter && y === randInner) ? <Timbit 
+                                                        rand={this.props.random} 
+                                                        scored={this.props.scored} /> : null
+
+    return <section key={`${y}item`}>
+              {rando}
+              <Coffee />
+            </section>
   }
 
   render(){

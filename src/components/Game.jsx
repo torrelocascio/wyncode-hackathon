@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Score from './Score';
 import Playfield from './Playfield';
+import generateRandom from './utils/Utils.js';
 
 class Game extends Component {
   constructor(){
@@ -19,15 +20,15 @@ class Game extends Component {
        this.setState( prev => ({score: prev.score + 1}))  
     }
 
-    generateRandom = () => {
-      let {randInner, randOuter} = this.state
-      let first = Math.floor(Math.random() * this.state.playHeight)
-      let second = Math.floor(Math.random() * this.state.playWidth)
-      
-      if(randOuter !== first && randInner !== second)
-        this.setState( () => ({randOuter: first, randInner: second}))
+    generateRandomPlacement = () => {
+      let {playHeight, playWidth, randInner, randOuter} = this.state
+      let height = generateRandom(playHeight)
+      let width = generateRandom(playWidth)
+
+      if(randOuter !== height && randInner !== width)
+        this.setState( () => ({randOuter: height, randInner: width}))
       else 
-        this.generateRandom()
+        this.generateRandomPlacement()
     }
 
     render(){
@@ -36,7 +37,7 @@ class Game extends Component {
             <main>
               <Score score={score}/>
               <Playfield
-                random={this.generateRandom}
+                random={this.generateRandomPlacement}
                 h={playHeight} 
                 w={playWidth} 
                 outer={randOuter}
